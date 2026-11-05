@@ -1,0 +1,11 @@
+server:
+  port: ${SERVER_PORT:8444}
+  ssl:
+    enabled: true
+    key-store: ${MTLS_SERVER_KEY_STORE:file:../certs/mtls-resource.p12}
+    key-store-type: PKCS12
+    key-store-password: ${CERT_STORE_PASSWORD:changeit}
+    trust-store: ${MTLS_TRUST_STORE:file:../certs/truststore.p12}
+    trust-store-type: PKCS12
+    trust-store-password: ${CERT_STORE_PASSWORD:changeit}
+    client-auth: need

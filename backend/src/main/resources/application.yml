@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: ${SESSION_COOKIE_SECURE:false}
+        same-site: ${SESSION_COOKIE_SAME_SITE:Lax}
+        path: /
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  auth:
+    username: ${DEMO_USERNAME:student}
+    password: ${DEMO_PASSWORD:change-me-local}
+    jwt-secret-base64: ${JWT_SECRET_BASE64:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
+  mtls:
+    resource-url: ${MTLS_RESOURCE_URL:https://localhost:8444}
+    client-key-store: ${MTLS_CLIENT_KEY_STORE:file:../certs/backend-client.p12}
+    trust-store: ${MTLS_TRUST_STORE:file:../certs/truststore.p12}
+    store-password: ${CERT_STORE_PASSWORD:changeit}

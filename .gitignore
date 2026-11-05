@@ -1,0 +1,13 @@
+certs/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.gradle/
+*.p12
+*.jks
+*.key
+*.csr
+*.srl
